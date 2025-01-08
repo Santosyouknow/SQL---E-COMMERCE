@@ -95,6 +95,11 @@ INSERT INTO `pelanggan` (`idPelanggan`, `Nama_Pelanggan`, `Alamat_Pelanggan`, `N
 (303, 'Siti Rahmawati', 'Jl. Flamboyan No. 2', '081333571794', 'teknik@gmail.com'),
 (304, 'Agung Pratama', 'Jl. Dahlia No. 8', '081333571765', 'yoscheer@gmail.com'),
 (305, 'Wati Suryani', 'Jl. Mawar Putih No. 5', '081333571788', 'yoyus@gmail.com');
+(306, 'Woody Roundop', 'Jl. Benang Indah No. 2', '08133567990', 'woody@gmail.com'),
+(307, 'Buzz Lightyear', 'Jl. Angkasa No. 4', '085366786577', 'buzz@gmail.com'),
+(308, 'Denis Sangar', 'Jl. Flamboyan No. 1', '08012901382', 'denis@gmail.com'),
+(309, 'Adit Pratama', 'Jl. Dahlia No. 8', '0821826472732', 'adit@gmail.com'),
+(310, 'Dilan Dautang', 'Jl. Mawar Putih No. 19', '08721352782', 'dilan@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -420,4 +425,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
