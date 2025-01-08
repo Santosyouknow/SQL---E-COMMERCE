@@ -62,6 +62,13 @@ INSERT INTO `pegawai_toko` (`idPegawai_Toko`, `Pemilik_Toko`, `Nama_Pegawai_Toko
 (33, 3, 'william', '081333571709'),
 (44, 4, 'marco', '081333571777'),
 (55, 5, 'jojo', '0813335717683');
+(66, 6, 'kevin', '081333571890'),
+(77, 7, 'michael', '081333571891'),
+(88, 8, 'david', '081333571892'),
+(99, 9, 'jessica', '081333571893'),
+(100, 10, 'sarah', '081333571894'),
+(111, 11, 'robert', '081333571895'),
+(122, 12, 'linda', '081333571896');
 
 -- --------------------------------------------------------
 
@@ -413,3 +420,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
