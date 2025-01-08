@@ -184,6 +184,42 @@ INSERT INTO `pengiriman` (`idPengiriman`, `Nomor_Resi`, `Tanggal_Pengiriman`, `S
 --
 -- Struktur dari tabel `pesanan`
 --
+-- Struktur dari tabel `alamat_tujuan_pengiriman`
+--
+
+CREATE TABLE `alamat_tujuan_pengiriman` (
+  `idAlamat` int(11) NOT NULL,
+  `idPelanggan` int(11) NOT NULL,
+  `Alamat_Lengkap` varchar(255) NOT NULL,
+  `Kota` varchar(100) NOT NULL,
+  `Provinsi` varchar(100) NOT NULL,
+  `Kode_Pos` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Indeks untuk tabel `alamat_tujuan_pengiriman`
+--
+ALTER TABLE `alamat_tujuan_pengiriman`
+  ADD PRIMARY KEY (`idAlamat`),
+  ADD KEY `fk_Alamat_Pelanggan_idx` (`idPelanggan`);
+
+-- AUTO_INCREMENT untuk tabel `alamat_tujuan_pengiriman`
+--
+ALTER TABLE `alamat_tujuan_pengiriman`
+  MODIFY `idAlamat` int(11) NOT NULL AUTO_INCREMENT;
+
+-- Ketidakleluasaan untuk tabel `alamat_tujuan_pengiriman`
+--
+ALTER TABLE `alamat_tujuan_pengiriman`
+  ADD CONSTRAINT `fk_Alamat_Pelanggan` FOREIGN KEY (`idPelanggan`) REFERENCES `pelanggan` (`idPelanggan`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Contoh data untuk tabel `alamat_tujuan_pengiriman`
+--
+INSERT INTO `alamat_tujuan_pengiriman` (`idAlamat`, `idPelanggan`, `Alamat_Lengkap`, `Kota`, `Provinsi`, `Kode_Pos`) VALUES
+(1, 9, 'Jl. Cendana No. 5', 'Surabaya', 'Jawa Timur', '60225'),
+(2, 301, 'Jl. Mawar No. 10', 'Malang', 'Jawa Timur', '65111'),
+(3, 302, 'Jl. Melati No. 7', 'Bandung', 'Jawa Barat', '40123'),
+(4, 303, 'Jl. Flamboyan No. 2', 'Yogyakarta', 'DIY', '55281'),
+(5, 304, 'Jl. Dahlia No. 8', 'Semarang', 'Jawa Tengah', '50135');
 
 CREATE TABLE `pesanan` (
   `idPesanan` int(11) NOT NULL,
