@@ -230,6 +230,20 @@ INSERT INTO alamat_tujuan_pengiriman (idAlamat, idPelanggan, Alamat_Lengkap, Kot
 (9, 308, 'Jl. Anggrek No. 4', 'Balikpapan', 'Kalimantan Timur', '76114'),
 (10, 309, 'Jl. Sakura No. 5', 'Palembang', 'Sumatera Selatan', '30137'),
 (11, 310, 'Jl. Teratai No. 2', 'Pekanbaru', 'Riau', '28292');
+--------------------------------------------------------------------------------------
+-- Menghitung total pesanan
+SET @totalPesanan = (SELECT COUNT(*) FROM alamat_tujuan_pengiriman);
+
+-- Menghitung dan memperbarui prosentase pesanan untuk setiap kota
+UPDATE alamat_tujuan_pengiriman ap
+JOIN (
+    SELECT Kota, COUNT(*) AS jumlah_pesanan
+    FROM alamat_tujuan_pengiriman
+    GROUP BY Kota
+) AS kota_pesanan ON ap.Kota = kota_pesanan.Kota
+SET ap.Prosentase_Pesanan = (kota_pesanan.jumlah_pesanan / @totalPesanan) * 100;
+
+-------------------------------------------------------------------------------------
 CREATE TABLE `pesanan` (
   `idPesanan` int(11) NOT NULL,
   `Pelanggan_idPelanggan` int(11) NOT NULL,
