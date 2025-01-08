@@ -215,7 +215,13 @@ INSERT INTO alamat_tujuan_pengiriman (idAlamat, idPelanggan, Alamat_Lengkap, Kot
 (2, 301, 'Jl. Mawar No. 10', 'Malang', 'Jawa Timur', '65111'),
 (3, 302, 'Jl. Melati No. 7', 'Bandung', 'Jawa Barat', '40123'),
 (4, 303, 'Jl. Flamboyan No. 2', 'Yogyakarta', 'DIY', '55281'),
-(5, 304, 'Jl. Dahlia No. 8', 'Semarang', 'Jawa Tengah', '50135');
+(5, 304, 'Jl. Dahlia No. 8', 'Semarang', 'Jawa Tengah', '50135'),
+(6, 305, 'Jl. Kenanga No. 3', 'Denpasar', 'Bali', '80361'),
+(7, 306, 'Jl. Pelangi No. 12', 'Makassar', 'Sulawesi Selatan', '90114'),
+(8, 307, 'Jl. Mawar Merah No. 8', 'Medan', 'Sumatera Utara', '20111'),
+(9, 308, 'Jl. Anggrek No. 4', 'Balikpapan', 'Kalimantan Timur', '76114'),
+(10, 309, 'Jl. Sakura No. 5', 'Palembang', 'Sumatera Selatan', '30137'),
+(11, 310, 'Jl. Teratai No. 2', 'Pekanbaru', 'Riau', '28292');
 CREATE TABLE `pesanan` (
   `idPesanan` int(11) NOT NULL,
   `Pelanggan_idPelanggan` int(11) NOT NULL,
