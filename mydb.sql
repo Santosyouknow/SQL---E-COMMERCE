@@ -75,30 +75,32 @@ INSERT INTO `pegawai_toko` (`idPegawai_Toko`, `Pemilik_Toko`, `Nama_Pegawai_Toko
 -- Struktur dari tabel `pelanggan`
 --
 
-CREATE TABLE `pelanggan` (
-  `idPelanggan` int(11) NOT NULL,
-  `Nama_Pelanggan` varchar(45) DEFAULT NULL,
-  `Alamat_Pelanggan` varchar(255) DEFAULT NULL,
-  `No_Telepon_Pelanggan` varchar(15) DEFAULT NULL,
-  `Email_Pelanggan` varchar(45) DEFAULT NULL
+CREATE TABLE pelanggan (
+  idPelanggan int(11) NOT NULL,
+  Nama_Pelanggan varchar(45) DEFAULT NULL,
+  Alamat_Pelanggan varchar(255) DEFAULT NULL,
+  No_Telepon_Pelanggan varchar(15) DEFAULT NULL,
+  Email_Pelanggan varchar(45) DEFAULT NULL,
+  idPegawai_Toko int(11) NOT NULL,  -- Kolom untuk menghubungkan pelanggan dengan pegawai
+  PRIMARY KEY (idPelanggan),
+  CONSTRAINT fk_idPegawai_Toko
+    FOREIGN KEY (idPegawai_Toko) REFERENCES pegawai_toko(idPegawai_Toko)
+    ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data untuk tabel `pelanggan`
---
-
-INSERT INTO `pelanggan` (`idPelanggan`, `Nama_Pelanggan`, `Alamat_Pelanggan`, `No_Telepon_Pelanggan`, `Email_Pelanggan`) VALUES
-(9, 'santos', 'wiyung', '081', 'santosopinaringan@gmail.com'),
-(301, 'Andi Kusuma', 'Jl. Melati No. 7', '081333571799', 'santos@gmail.com'),
-(302, 'Budi Santoso', 'Jl. Cempaka No. 4', '081333571792', 'rere@gmail.com'),
-(303, 'Siti Rahmawati', 'Jl. Flamboyan No. 2', '081333571794', 'teknik@gmail.com'),
-(304, 'Agung Pratama', 'Jl. Dahlia No. 8', '081333571765', 'yoscheer@gmail.com'),
-(305, 'Wati Suryani', 'Jl. Mawar Putih No. 5', '081333571788', 'yoyus@gmail.com');
-(306, 'Woody Roundop', 'Jl. Benang Indah No. 2', '08133567990', 'woody@gmail.com'),
-(307, 'Buzz Lightyear', 'Jl. Angkasa No. 4', '085366786577', 'buzz@gmail.com'),
-(308, 'Denis Sangar', 'Jl. Flamboyan No. 1', '08012901382', 'denis@gmail.com'),
-(309, 'Adit Pratama', 'Jl. Dahlia No. 8', '0821826472732', 'adit@gmail.com'),
-(310, 'Dilan Dautang', 'Jl. Mawar Putih No. 19', '08721352782', 'dilan@gmail.com');
+-- Menambahkan data ke tabel pelanggan dengan idPegawai_Toko
+INSERT INTO pelanggan (idPelanggan, Nama_Pelanggan, Alamat_Pelanggan, No_Telepon_Pelanggan, Email_Pelanggan, idPegawai_Toko) VALUES
+(9, 'santos', 'wiyung', '081', 'santosopinaringan@gmail.com', 11),
+(301, 'Andi Kusuma', 'Jl. Melati No. 7', '081333571799', 'santos@gmail.com', 22),
+(302, 'Budi Santoso', 'Jl. Cempaka No. 4', '081333571792', 'rere@gmail.com', 33),
+(303, 'Siti Rahmawati', 'Jl. Flamboyan No. 2', '081333571794', 'teknik@gmail.com', 44),
+(304, 'Agung Pratama', 'Jl. Dahlia No. 8', '081333571765', 'yoscheer@gmail.com', 55),
+(305, 'Wati Suryani', 'Jl. Mawar Putih No. 5', '081333571788', 'yoyus@gmail.com', 66),
+(306, 'Woody Roundop', 'Jl. Benang Indah No. 2', '08133567990', 'woody@gmail.com', 77),
+(307, 'Buzz Lightyear', 'Jl. Angkasa No. 4', '085366786577', 'buzz@gmail.com', 88),
+(308, 'Denis Sangar', 'Jl. Flamboyan No. 1', '08012901382', 'denis@gmail.com', 99),
+(309, 'Adit Pratama', 'Jl. Dahlia No. 8', '0821826472732', 'adit@gmail.com', 100),
+(310, 'Dilan Dautang', 'Jl. Mawar Putih No. 19', '08721352782', 'dilan@gmail.com', 111);
 
 -- --------------------------------------------------------
 
